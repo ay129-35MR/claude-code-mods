@@ -1,0 +1,32 @@
+{
+  "name": "handoff",
+  "version": "0.1.0",
+  "description": "Writes a structured handover prompt (goals, modified files, dependencies, next steps) for a new session when context reaches 250k tokens, or on /handoff.",
+  "license": "MIT",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Turn handoff on or off; off unloads its hooks until turned back on.",
+      "default": true
+    },
+    "threshold_tokens": {
+      "type": "number",
+      "title": "Context threshold (tokens)",
+      "description": "Write a handover automatically once the context reaches this size.",
+      "default": 250000
+    },
+    "auto": {
+      "type": "boolean",
+      "title": "Automatic handover",
+      "description": "Write the handover by itself at the threshold; off leaves only /handoff.",
+      "default": true
+    },
+    "folder": {
+      "type": "string",
+      "title": "Handover folder",
+      "description": "Where handover files are written, relative to the working directory.",
+      "default": ".claude/handoffs"
+    }
+  }
+}

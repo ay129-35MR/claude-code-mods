@@ -1,0 +1,44 @@
+{
+  "name": "subagent-model-selector",
+  "version": "0.1.0",
+  "description": "Rates each subagent's task as it spawns and runs basic tasks on Haiku, intermediate on Sonnet and heavy reasoning on Opus.",
+  "license": "MIT",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Turn subagent-model-selector on or off; off unloads its hooks until turned back on.",
+      "default": true
+    },
+    "basic_model": {
+      "type": "string",
+      "title": "Basic tasks",
+      "description": "Model for basic tasks.",
+      "default": "claude-haiku-5-5"
+    },
+    "intermediate_model": {
+      "type": "string",
+      "title": "Intermediate tasks",
+      "description": "Model for intermediate tasks.",
+      "default": "claude-sonnet-5-5"
+    },
+    "heavy_model": {
+      "type": "string",
+      "title": "Heavy reasoning tasks",
+      "description": "Model for heavy reasoning tasks.",
+      "default": "claude-opus-5-5"
+    },
+    "rater_model": {
+      "type": "string",
+      "title": "Rating model",
+      "description": "Model that rates each task.",
+      "default": "claude-haiku-5-5"
+    },
+    "override_explicit": {
+      "type": "boolean",
+      "title": "Override explicit models",
+      "description": "Also re-route spawns whose Agent call already named a model.",
+      "default": false
+    }
+  }
+}

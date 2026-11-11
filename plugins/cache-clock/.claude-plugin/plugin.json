@@ -1,0 +1,38 @@
+{
+  "name": "cache-clock",
+  "version": "0.1.0",
+  "description": "Counts down the session's prompt-cache lifetime above the prompt and keeps it warm on demand with /keepwarm.",
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Turn cache-clock on or off; off unloads its hooks until turned back on.",
+      "default": true
+    },
+    "ttl": {
+      "type": "string",
+      "title": "Cache lifetime",
+      "description": "auto: 5 minutes when ANTHROPIC_API_KEY is set, else 1 hour (subscriptions).",
+      "options": [
+        "auto",
+        "5m",
+        "1h"
+      ],
+      "default": "auto"
+    },
+    "auto_keepwarm": {
+      "type": "boolean",
+      "title": "Keep warm automatically",
+      "description": "Ping just before the cache expires while the session is idle. Each ping is billed.",
+      "default": false
+    },
+    "max_auto_pings": {
+      "type": "number",
+      "title": "Automatic pings per idle stretch",
+      "description": "How many automatic pings in a row before letting the cache go cold.",
+      "default": 3
+    }
+  }
+}

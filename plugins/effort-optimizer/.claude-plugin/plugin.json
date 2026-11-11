@@ -1,0 +1,37 @@
+{
+  "name": "effort-optimizer",
+  "version": "0.1.0",
+  "description": "Rates each prompt's complexity with Sonnet in the background and suggests or sets the turn's reasoning effort (low, medium or high).",
+  "license": "MIT",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Turn effort-optimizer on or off; off unloads its hooks until turned back on.",
+      "default": true
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "suggest: show the recommended level. set: apply it to the turn. off: do nothing.",
+      "options": [
+        "suggest",
+        "set",
+        "off"
+      ],
+      "default": "suggest"
+    },
+    "model": {
+      "type": "string",
+      "title": "Rating model",
+      "description": "Model alias or id that rates prompt complexity.",
+      "default": "claude-sonnet-5-5"
+    },
+    "wait_ms": {
+      "type": "number",
+      "title": "Wait before first request (ms)",
+      "description": "In set mode, how long the turn's first request waits for the rating before going ahead at the session's level.",
+      "default": 4000
+    }
+  }
+}

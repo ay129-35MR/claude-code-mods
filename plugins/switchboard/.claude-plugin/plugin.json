@@ -1,0 +1,15 @@
+{
+  "name": "switchboard",
+  "version": "0.1.0",
+  "description": "A side panel listing every plugin and mod in the session, with ON/OFF switches and their settings, changed live.",
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "open_on_start": {
+      "type": "boolean",
+      "title": "Open on start",
+      "description": "Open the switchboard panel when the session starts.",
+      "default": true
+    }
+  }
+}

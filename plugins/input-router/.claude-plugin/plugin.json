@@ -1,0 +1,26 @@
+{
+  "name": "input-router",
+  "version": "0.1.0",
+  "description": "Routes oversized Read and MCP connector outputs (over ~2,000 tokens) through Haiku, which returns only the relevant excerpts plus a summary.",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Turn input-router on or off; off unloads its hooks until turned back on.",
+      "default": true
+    },
+    "threshold_tokens": {
+      "type": "number",
+      "title": "Threshold (tokens)",
+      "description": "Outputs estimated above this many tokens are condensed by Haiku.",
+      "default": 2000
+    },
+    "model": {
+      "type": "string",
+      "title": "Condensing model",
+      "description": "Model alias or id used to extract excerpts.",
+      "default": "claude-haiku-5-5"
+    }
+  },
+  "license": "MIT"
+}

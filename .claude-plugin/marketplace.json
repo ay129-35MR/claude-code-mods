@@ -1,0 +1,39 @@
+{
+  "name": "claude-code-mods",
+  "description": "Six Claude Code mods: context routing, effort and model selection, cache keep-warm, handoffs and a switchboard panel.",
+  "owner": {
+    "name": "ay129-35MR"
+  },
+  "plugins": [
+    {
+      "name": "input-router",
+      "source": "./plugins/input-router",
+      "description": "Condenses Read and MCP outputs over ~2,000 tokens to relevant excerpts with Haiku."
+    },
+    {
+      "name": "effort-optimizer",
+      "source": "./plugins/effort-optimizer",
+      "description": "Rates each prompt with Sonnet and suggests or sets low/medium/high effort."
+    },
+    {
+      "name": "subagent-model-selector",
+      "source": "./plugins/subagent-model-selector",
+      "description": "Routes subagents to Haiku, Sonnet or Opus by task difficulty."
+    },
+    {
+      "name": "cache-clock",
+      "source": "./plugins/cache-clock",
+      "description": "Prompt-cache countdown above the prompt, with /keepwarm."
+    },
+    {
+      "name": "handoff",
+      "source": "./plugins/handoff",
+      "description": "Writes a handover prompt for a new session at 250k tokens or on /handoff."
+    },
+    {
+      "name": "switchboard",
+      "source": "./plugins/switchboard",
+      "description": "Side panel with ON/OFF switches and settings for every mod."
+    }
+  ]
+}
